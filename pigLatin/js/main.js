@@ -21,13 +21,12 @@ $("#submitButton").click(function() {
       var newS = x.substr(0,1);
       x += newS;
       translation += x + "ay ";
-      translation = translation.substr(1);
+      translation = translation.slice(1);
     }
   }
 
   for (var i = 0; i < splitResult.length; i++) {
     checkCons(splitResult[i]);
-
     //checkVowel(splitResult[i]);
     $("#output").html(translation);
   }
