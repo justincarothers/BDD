@@ -1,50 +1,21 @@
-
-
 $(document).ready(function() {
 
-  $("#submitButton").click(function(){
 
-    var usersInput = $("#yearInput").val();
-    console.log("User has input: " + usersInput);
-
-    var result=parseInt(usersInput);
-
-    if (isNaN(result)) {
-      alert("ENTER A NUMBER, FOOL!")
-    } else if (result % 4 === 0 && result % 100 !== 0) {
-      console.log("TRUE");
-      document.getElementById("output").innerHTML = result +" IS A LEAP YEAR!";
-      return true;
-    }  else if (result % 400 === 0) {
-      console.log("TRUE");
-    } else {
-      document.getElementById("output").innerHTML = result +" IS NOT A LEAP YEAR!";
-      console.log("FALSE");
-    }
-
-  });
 });
 
+
+
+// $("#submitButton").click(function(){
 //
-// } if (result % 100 === 0 ){
-//   console.log("Criteria 2: input is divisible by 100. returns FALSE.")
-//   return false;
-// } else if (result % 400 === 0 ) {
-//   console.log("Criteria 3: input is divisible by 400. returns TRUE;")
-//   alert("The year: " + parseInt(usersInput) + " is a leap year!")
-
-
-
-//=================
-
-// if (result % (4 || 400) === 0 ) {
+//   var binary = $("#binaryInput").val().split('');
+//   function convertToDecimal(binary) {
+//     var decimal = 0;
 //
-//   if ()
-//   console.log("TRUE")
-//   alert(result + " is a leap year!")
+//     for (var i = binaryInput.length-1; i >= 0; i--) {
 //
-// } else {
-//   alert(result + " is NOT a leap year!")
-//   console.log("FALSE")
-//   return false;
-// }
+//       decimal += parseInt(binary[i]) * Math.pow(2, bin.length-1-i);
+//       console.log(decimal);
+//       return decimal;
+//     }
+//   }
+// )};
