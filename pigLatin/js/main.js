@@ -1,32 +1,34 @@
-$(document).ready(function() {
+$("#submitButton").click(function() {
+  var result = $("#messageInput").val();
+  var firstLetter = result.charAt(0);
+  var vowel = ("a" , "e" , "i" , "o" , "u");
+  var translation = "";
+  var splitResult = result.split(" ");
 
-  function firstIsVowel(thisArray) {
-    for (i=0; i < thisArray.length; i++) {
-      if ((thisArray[i].charAt(0)) === vowel) {
-        thisArray[i] = (thisArray[i] += "ay");
-      }
-    }
-    console.log(thisArray);
-  }
-  $("#submitButton").click(function() {
-    var result = $("#messageInput").val();
-    var firstLetter = result.charAt(0);
-    var vowel = ("a" || "e" || "i" || "o" || "u");
-    var translation = "";
-    var split = result.split(" ");
-    console.log(split);
-    console.log("message input: " + result);
-    console.log("first letter is " + firstLetter);
+  function checkVowel(x) {
 
-    if (result.charAt(0) === "a" || result.charAt(0) === "e" || result.charAt(0) === "i" || result.charAt(0) === "o" || result.charAt(0) === "u" ) {
-      console.log("first letter is vowel");
-      translation = (result += "ay");
-      console.log("-------------");
-      console.log(translation);
-      console.log("-------------");
+    if (x.charAt(0) === "a" || x.charAt(0) === "e" || x.charAt(0) === "i" || x.charAt(0) === "o" || x.charAt(0) === "u" ) {
+
+      translation += (splitResult[i] += "yay ");
+
     } else {
-      console.log("first letter is not vowel")
+      translation += splitResult[i]+= " ";
     }
-  });
+  }
 
+  function checkCons(x) {
+    if ((x.charAt(0) !== "a") && (x.charAt(0) !== "e") && (x.charAt(0) !== "i") && (x.charAt(0) !== "o") && (x.charAt(0) !== "u")) {
+      var newS = x.substr(0,1);
+      x += newS;
+      translation += x + "ay ";
+      translation = translation.substr(1);
+    }
+  }
+
+  for (var i = 0; i < splitResult.length; i++) {
+    checkCons(splitResult[i]);
+
+    //checkVowel(splitResult[i]);
+    $("#output").html(translation);
+  }
 });
